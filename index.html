@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2023 CRICKET WORLD CUP SCHEDULE</title>
+    <link rel="icon" href="IMG/icon.jpg" />
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    #bg {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    #teams {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-top: 100px;
+    }
+
+    .flag {
+      height: 120px;
+      width: 240px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    #date {
+      position: absolute;
+      font-size: 25px;
+      right: 20px;
+      top: 10px;
+    }
+
+    #stadium {
+      font-size: 25px;
+      margin-top: 30px;
+      color: black;
+      background-color: white;
+      border: 2px solid black;
+      padding: 3px;
+    }
+
+    #match_no {
+      font-size: 25px;
+      margin-top: 30px;
+      color: black;
+      border: 2px solid black;
+      background-color: white;
+      padding: 3px;
+    }
+
+    @media screen and (max-width: 680px) {
+      #teams {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 200px;
+      }
+      .flag {
+        height: 80px;
+        width: 160px;
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+
+      #date {
+        position: absolute;
+        font-size: 20px;
+        right: 15px;
+        top: 10px;
+      }
+
+      #stadium {
+        font-size: 20px;
+        margin-top: 20px;
+        color: black;
+        background-color: white;
+        border: 2px solid black;
+        padding: 3px;
+      }
+
+      #match_no {
+        font-size: 20px;
+        margin-top: 20px;
+        color: black;
+        border: 1px solid black;
+        background-color: white;
+        padding: 2px;
+      }
+    }
+
+    @media screen and (max-width: 450px) {
+      #teams {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 200px;
+      }
+      .flag {
+        height: 70px;
+        width: 140px;
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+
+      #date {
+        position: absolute;
+        font-size: 20px;
+        right: 15px;
+        top: 10px;
+      }
+
+      #stadium {
+        font-size: 20px;
+        margin-top: 20px;
+        color: black;
+        background-color: white;
+        border: 2px solid black;
+        padding: 3px;
+      }
+
+      #match_no {
+        font-size: 20px;
+        margin-top: 20px;
+        color: black;
+        border: 1px solid black;
+        background-color: white;
+        padding: 2px;
+      }
+    }
+
+    @media screen and (max-width: 360px) {
+      #teams {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 200px;
+      }
+      .flag {
+        height: 50px;
+        width: 100px;
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+    }
+  </style>
+  <body>
+    <div id="bg">
+      <div id="date"></div>
+      <div id="teams">
+        <div id="one"><img src="" class="flag" /></div>
+        <h2>VS</h2>
+        <div id="two"><img src="" class="flag" /></div>
+      </div>
+      <div id="stadium"></div>
+      <div id="match_no"></div>
+    </div>
+    <script>
+      var B = document.getElementById("bg");
+      var D = document.getElementById("date");
+      var O = document.getElementById("one");
+      var T = document.getElementById("two");
+      var S = document.getElementById("stadium");
+      var M = document.getElementById("match_no");
+
+      schedule = [
+        [
+          "Stadium/NMS.jpg",
+          "05-10-2023",
+          "Flag/eng.jpg",
+          "Flag/nz.jpg",
+          "Ahmedabad",
+          "Match : 1",
+        ],
+        [
+          "Stadium/RGS.jpg",
+          "06-10-2023",
+          "Flag/pak.jpg",
+          "Flag/ned.jpg",
+          "Hyderabad",
+          "Match : 2",
+        ],
+        [
+          "Stadium/DS.jpg",
+          "07-10-2023",
+          "Flag/ban.jpg",
+          "Flag/afg.jpg",
+          "Dharamsala",
+          "Match : 3",
+        ],
+        [
+          "Stadium/AJS.jpg",
+          "07-10-2023",
+          "Flag/sa.jpg",
+          "Flag/sl.jpg",
+          "Delhi",
+          "Match : 4",
+        ],
+        [
+          "Stadium/MACS.jpg",
+          "08-10-2023",
+          "Flag/ind.jpg",
+          "Flag/aus.jpg",
+          "Chennai",
+          "Match : 5",
+        ],
+        [
+          "Stadium/RGS.jpg",
+          "09-10-2023",
+          "Flag/nz.jpg",
+          "Flag/ned.jpg",
+          "Hyderabad",
+          "Match : 6",
+        ],
+        [
+          "Stadium/DS.jpg",
+          "10-10-2023",
+          "Flag/eng.jpg",
+          "Flag/ban.jpg",
+          "Dharamsala",
+          "Match : 7",
+        ],
+        [
+          "Stadium/RGS.jpg",
+          "10-10-2023",
+          "Flag/pak.jpg",
+          "Flag/sl.jpg",
+          "Hyderabad",
+          "Match : 8",
+        ],
+        [
+          "Stadium/AJS.jpg",
+          "11-10-2023",
+          "Flag/ind.jpg",
+          "Flag/afg.jpg",
+          "Delhi",
+          "Match : 9",
+        ],
+        [
+          "Stadium/ES.jpg",
+          "12-10-2023",
+          "Flag/aus.jpg",
+          "Flag/sa.jpg",
+          "Lucknow",
+          "Match : 10",
+        ],
+        [
+          "Stadium/MACS.jpg",
+          "13-10-2023",
+          "Flag/nz.jpg",
+          "Flag/ban.jpg",
+          "Chennai",
+          "Match : 11",
+        ],
+        [
+          "Stadium/NMS.jpg",
+          "14-10-2023",
+          "Flag/ind.jpg",
+          "Flag/pak.jpg",
+          "Ahmedabad",
+          "Match : 12",
+        ],
+        [
+          "Stadium/AJS.jpg",
+          "15-10-2023",
+          "Flag/eng.jpg",
+          "Flag/afg.jpg",
+          "Delhi",
+          "Match : 13",
+        ],
+        [
+          "Stadium/ES.jpg",
+          "16-10-2023",
+          "Flag/aus.jpg",
+          "Flag/sl.jpg",
+          "Lucknow",
+          "Match : 14",
+        ],
+        [
+          "Stadium/DS.jpg",
+          "17-10-2023",
+          "Flag/sa.jpg",
+          "Flag/ned.jpg",
+          "Dharamsala",
+          "Match : 15",
+        ],
+        [
+          "Stadium/MACS.jpg",
+          "18-10-2023",
+          "Flag/nz.jpg",
+          "Flag/afg.jpg",
+          "Chennai",
+          "Match : 16",
+        ],
+        [
+          "Stadium/PS.jpg",
+          "19-10-2023",
+          "Flag/ind.jpg",
+          "Flag/ban.jpg",
+          "Pune",
+          "Match : 17",
+        ],
+        [
+          "Stadium/MS.jpg",
+          "20-10-2023",
+          "Flag/aus.jpg",
+          "Flag/pak.jpg",
+          "Bengaluru",
+          "Match : 18",
+        ],
+        [
+          "Stadium/ES.jpg",
+          "21-10-2023",
+          "Flag/ned.jpg",
+          "Flag/sl.jpg",
+          "Lucknow",
+          "Match : 19",
+        ],
+        [
+          "Stadium/WS.jpg",
+          "21-10-2023",
+          "Flag/eng.jpg",
+          "Flag/sa.jpg",
+          "Mumbai",
+          "Match : 20",
+        ],
+        [
+          "Stadium/DS.jpg",
+          "22-10-2023",
+          "Flag/ind.jpg",
+          "Flag/nz.jpg",
+          "Dharamsala",
+          "Match : 21",
+        ],
+        [
+          "Stadium/MACS.jpg",
+          "23-10-2023",
+          "Flag/pak.jpg",
+          "Flag/afg.jpg",
+          "Chennai",
+          "Match : 22",
+        ],
+        [
+          "Stadium/WS.jpg",
+          "24-10-2023",
+          "Flag/sa.jpg",
+          "Flag/ban.jpg",
+          "Mumbai",
+          "Match : 23",
+        ],
+        [
+          "Stadium/AJS.jpg",
+          "25-10-2023",
+          "Flag/aus.jpg",
+          "Flag/ned.jpg",
+          "Delhi",
+          "Match : 24",
+        ],
+        [
+          "Stadium/MS.jpg",
+          "26-10-2023",
+          "Flag/eng.jpg",
+          "Flag/sl.jpg",
+          "Bengaluru",
+          "Match : 25",
+        ],
+        [
+          "Stadium/MACS.jpg",
+          "27-10-2023",
+          "Flag/pak.jpg",
+          "Flag/sa.jpg",
+          "Chennai",
+          "Match : 26",
+        ],
+        [
+          "Stadium/DS.jpg",
+          "28-10-2023",
+          "Flag/aus.jpg",
+          "Flag/nz.jpg",
+          "Dharamsala",
+          "Match : 27",
+        ],
+        [
+          "Stadium/EGS.jpg",
+          "28-10-2023",
+          "Flag/ned.jpg",
+          "Flag/ban.jpg",
+          "Kolkata",
+          "Match : 28",
+        ],
+        [
+          "Stadium/ES.jpg",
+          "29-10-2023",
+          "Flag/ind.jpg",
+          "Flag/eng.jpg",
+          "Lucknow",
+          "Match : 29",
+        ],
+        [
+          "Stadium/PS.jpg",
+          "30-10-2023",
+          "Flag/afg.jpg",
+          "Flag/sl.jpg",
+          "Pune",
+          "Match : 30",
+        ],
+        [
+          "Stadium/EGS.jpg",
+          "31-10-2023",
+          "Flag/pak.jpg",
+          "Flag/ban.jpg",
+          "Kolkata",
+          "Match : 31",
+        ],
+        [
+          "Stadium/PS.jpg",
+          "01-11-2023",
+          "Flag/nz.jpg",
+          "Flag/sa.jpg",
+          "Pune",
+          "Match : 32",
+        ],
+        [
+          "Stadium/WS.jpg",
+          "02-11-2023",
+          "Flag/ind.jpg",
+          "Flag/sl.jpg",
+          "Mumbai",
+          "Match : 33",
+        ],
+        [
+          "Stadium/ES.jpg",
+          "03-11-2023",
+          "Flag/ned.jpg",
+          "Flag/afg.jpg",
+          "Lucknow",
+          "Match : 34",
+        ],
+        [
+          "Stadium/MS.jpg",
+          "04-11-2023",
+          "Flag/nz.jpg",
+          "Flag/pak.jpg",
+          "Bengaluru",
+          "Match : 35",
+        ],
+        [
+          "Stadium/NMS.jpg",
+          "04-11-2023",
+          "Flag/eng.jpg",
+          "Flag/aus.jpg",
+          "Ahmedabad",
+          "Match : 36",
+        ],
+        [
+          "Stadium/EGS.jpg",
+          "05-11-2023",
+          "Flag/ind.jpg",
+          "Flag/sa.jpg",
+          "Kolkata",
+          "Match : 37",
+        ],
+        [
+          "Stadium/AJS.jpg",
+          "06-11-2023",
+          "Flag/ban.jpg",
+          "Flag/sl.jpg",
+          "Delhi",
+          "Match : 38",
+        ],
+        [
+          "Stadium/WS.jpg",
+          "07-11-2023",
+          "Flag/aus.jpg",
+          "Flag/afg.jpg",
+          "Mumbai",
+          "Match : 39",
+        ],
+        [
+          "Stadium/PS.jpg",
+          "08-11-2023",
+          "Flag/eng.jpg",
+          "Flag/ned.jpg",
+          "Pune",
+          "Match : 40",
+        ],
+        [
+          "Stadium/MS.jpg",
+          "09-11-2023",
+          "Flag/nz.jpg",
+          "Flag/sl.jpg",
+          "Bengaluru",
+          "Match : 41",
+        ],
+        [
+          "Stadium/NMS.jpg",
+          "10-11-2023",
+          "Flag/sa.jpg",
+          "Flag/afg.jpg",
+          "Ahmedabad",
+          "Match : 42",
+        ],
+        [
+          "Stadium/PS.jpg",
+          "11-11-2023",
+          "Flag/aus.jpg",
+          "Flag/ban.jpg",
+          "Pune",
+          "Match : 43",
+        ],
+        [
+          "Stadium/EGS.jpg",
+          "11-11-2023",
+          "Flag/eng.jpg",
+          "Flag/pak.jpg",
+          "Kolkata",
+          "Match : 44",
+        ],
+        [
+          "Stadium/MS.jpg",
+          "12-11-2023",
+          "Flag/ind.jpg",
+          "Flag/ned.jpg",
+          "Bengaluru",
+          "Match : 45",
+        ],
+        [
+          "Stadium/WS.jpg",
+          "15-11-2023",
+          "Flag/.jpg",
+          "Flag/.jpg",
+          "Mumbai",
+          "Match : 46",
+        ],
+        [
+          "Stadium/EGS.jpg",
+          "16-11-2023",
+          "Flag/.jpg",
+          "Flag/.jpg",
+          "Kolkata",
+          "Match : 47",
+        ],
+        [
+          "Stadium/NMS.jpg",
+          "19-11-2023",
+          "Flag/.jpg",
+          "Flag/.jpg",
+          "Ahmedabad",
+          "Match : 48",
+        ],
+      ];
+
+      const currentDate = new Date();
+
+      const fullDate = currentDate.toString();
+
+      const year = currentDate.getFullYear();
+      const month = currentDate.getMonth() + 1;
+      const day = currentDate.getDate();
+      const hours = currentDate.getHours();
+      const minutes = currentDate.getMinutes();
+      const seconds = currentDate.getSeconds();
+
+      const formattedDate = `${day.toString().padStart(2, "0")}-${month
+        .toString()
+        .padStart(2, "0")}-${year}`;
+
+      console.log("Formatted Date:", formattedDate);
+
+      let i;
+      let matchFound = false;
+      for (i = 0; i <= 47; i++) {
+        if (formattedDate == schedule[i][1]) {
+          B.style.backgroundImage = `url(${schedule[i][0]})`;
+          D.innerHTML = schedule[i][1];
+          O.querySelector("img").src = schedule[i][2];
+          T.querySelector("img").src = schedule[i][3];
+          S.innerHTML = schedule[i][4];
+          M.innerHTML = schedule[i][5];
+
+          if (formattedDate == schedule[i + 1][1]) {
+            setTimeout(function () {
+              alert(
+                "2 MATCHES TODAY...TAP ON THE SCREEN TO SEE THE 2ND MATCH...RELOAD TO SEE THE 1ST MATCH"
+              );
+            }, 2000);
+            document.addEventListener("click", function () {
+              B.style.backgroundImage = `url(${schedule[i + 1][0]})`;
+              D.innerHTML = schedule[i + 1][1];
+              O.querySelector("img").src = schedule[i + 1][2];
+              T.querySelector("img").src = schedule[i + 1][3];
+              S.innerHTML = schedule[i + 1][4];
+              M.innerHTML = schedule[i + 1][5];
+            });
+          }
+          matchFound = true;
+          break;
+        }
+      }
+      if (!matchFound) {
+        B.style.backgroundImage = "none";
+        D.innerHTML = formattedDate;
+        O.querySelector("img").src = "";
+        T.querySelector("img").src = "";
+        S.innerHTML = "";
+        M.innerHTML = "NO MATCH TODAY &#128579";
+      }
+    </script>
+  </body>
+</html>
