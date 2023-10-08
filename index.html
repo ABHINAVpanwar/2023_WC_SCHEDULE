@@ -601,22 +601,15 @@
           if (formattedDate == schedule[i + 1][1]) {
             setTimeout(function () {
               alert(
-                "2 MATCHES TODAY...TAP ON THE SCREEN TO SEE THE 2ND MATCH...RELOAD TO SEE THE 1ST MATCH"
+                "2 MATCHES TODAY ... TAP ON THE SCREEN TO SEE NEXT MATCH ... RELOAD TO SEE TODAYS MATCH"
               );
             }, 2000);
-            document.addEventListener("click", function () {
-              B.style.backgroundImage = `url(${schedule[i + 1][0]})`;
-              D.innerHTML = schedule[i + 1][1];
-              O.querySelector("img").src = schedule[i + 1][2];
-              T.querySelector("img").src = schedule[i + 1][3];
-              S.innerHTML = schedule[i + 1][4];
-              M.innerHTML = schedule[i + 1][5];
-            });
           }
           matchFound = true;
           break;
         }
       }
+
       if (!matchFound) {
         B.style.backgroundImage = "none";
         D.innerHTML = formattedDate;
@@ -625,6 +618,16 @@
         S.innerHTML = "";
         M.innerHTML = "NO MATCH TODAY &#128579";
       }
+
+      document.addEventListener("click", function () {
+        i = i + 1;
+        B.style.backgroundImage = `url(${schedule[i][0]})`;
+        D.innerHTML = schedule[i][1];
+        O.querySelector("img").src = schedule[i][2];
+        T.querySelector("img").src = schedule[i][3];
+        S.innerHTML = schedule[i][4];
+        M.innerHTML = schedule[i][5];
+      });
     </script>
   </body>
 </html>
